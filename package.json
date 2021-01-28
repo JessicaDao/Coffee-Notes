@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/JessicaDao/project2/issues"
   },
-  "homepage": "https://github.com/JessicaDao/project2#readme"
+  "homepage": "https://github.com/JessicaDao/project2#readme",
+  "dependencies": {
+    "config.json": "0.0.4",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "materialize-css": "^1.0.0-rc.2"
+  }
 }
