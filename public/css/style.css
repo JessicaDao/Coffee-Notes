@@ -1,0 +1,10 @@
+.columns{
+	position: relative;
+	background-image: url('/Coffee-Notes/views/img/bg.jpg');
+	background-position: bottom center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+#register {
+    
+}
