@@ -1,11 +1,8 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
+(function () {
+  var burger = document.querySelector('.navbar-burger');
+  var menu = document.querySelector('#' + navbar-burger.dataset.target);
+  burger.addEventListener('click', function () {
+      burger.classList.toggle('is-active');
+      menu.classList.toggle('is-active');
   });
-
-  // Or with jQuery
-
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
-     
+})();
