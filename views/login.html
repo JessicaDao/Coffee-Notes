@@ -8,7 +8,8 @@
 	<title>Coffee Notes ✎</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
   <link rel="stylesheet" href="/Coffee-Notes/public/css/style.css">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -18,22 +19,23 @@
     <img src="/Coffee-Notes/views/img/logo.png" alt="Coffee Notes" width="175">
     </div>
   </nav>
-  <div class="container">
 
+  <div class="container">
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span></span>
       <span></span>
       <span></span>
     </a>
     <div id="navbar" class="navbar-menu">
-    <a class="navbar" href="home.html">Create New Entry</a>
-    <a class="navbar" href="home.html">Journal</a>
+    <a class="navbar-item" href="create.html">Create New Entry</a>
+    <a class="navbar-item" href="journal.html">Journal</a>
+    <a class="navbar-item is-active" href="login.html">Register/Login</a>
     </div>
   </nav>
-  
-  <!--Registration-->
+
 
 	<div class="columns is-desktop">
+   <!--Registration-->
 		<div id="register" class="column is-half">
       <h1>Register</h1>
       <div class="field">
@@ -70,8 +72,14 @@
       </div>
     </div>
 </div>
+<!--footer image-->
+<div class="footerbg">
+  <br>
+  <br>
+  <br>
+</div>
   <!-- Site Footer -->
-  <div class="content has-text-centered">
+  <div class= "footer content has-text-centered">
     <p>
       <strong>Coffee Notes</strong> by Jessica, Pierre and Sara. UW Coding Bootcamp 2021
   </p>
