@@ -21,7 +21,7 @@ app.get("/login", function(req, res) {
     });
 
 app.get("/create", function(req, res) {
-  res.render();
+    res.render();
 });
 
 app.get("/journal", function(req, res) {

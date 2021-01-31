@@ -15,12 +15,9 @@ CREATE TABLE user
 
 );
 
-CREATE TABLE orderNum
+CREATE TABLE 
 (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    customer_id INT NOT NULL,
-    amount INT NOT NULL,
-    status BOOLEAN NOT NULL
+
 );
 
 
