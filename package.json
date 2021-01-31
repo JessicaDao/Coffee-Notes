@@ -23,6 +23,8 @@
     "config.json": "0.0.4",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
-    "materialize-css": "^1.0.0-rc.2"
+    "materialize-css": "^1.0.0-rc.2",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.0"
   }
 }

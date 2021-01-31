@@ -10,8 +10,8 @@ CREATE TABLE user
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
     dob INT(4),
-    email VARCHAR(100) NOT NULL,
-    password VARCHAR(100) NOT NULL,
+    email VARCHAR(35) NOT NULL,
+    password VARCHAR(12) NOT NULL,
 
 );
 
