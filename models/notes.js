@@ -36,9 +36,14 @@ module.exports = function(sequelize, DataTypes){
     location:{
         type:DataTypes.STRING,
         allowNull:true
+    },
+    notes:{
+        type:DataTypes.TEXT,
+        allowNull:false
     }
 });
     Details.associate = function(models){
+        Details.belongsTo(models.User);
 
     };
     return Details;
