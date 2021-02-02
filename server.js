@@ -1,44 +1,45 @@
 // Dependencies
 var express = require("express");
-var exphbs = require("express-handlebars");
 
 // Create an instance of the express app.
-var app = express();
+const app = express();
 
 // Set the port of our application
 // process.env.PORT lets the port be set by Heroku
-var PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 //Models for syncing
-var db = require ("./models");
+const db = require ("./models");
 
 // Set up Express app to handle data parsing
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({
+  extended:true
+}));
+
 app.use(express.json());
-//Statis directory
+
+//Static directory
 app.use(express.static("public"));
 
 // Set Handlebars as the default templating engine.
-var exphbs = require("express-handlebars");
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+const exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs({ 
+  defaultLayout: "main" 
+}));
 app.set("view engine", "handlebars");
 
+app.get("/", (req,res)=>{
+  res.send("hi");
+})
 // Data
 
 // Routes
-app.get("/login", function(req, res) {
-    res.render();
-    });
+const userRoutes = require("./controllers/userController");
+app.use(userRoute);
 
-app.get("/create", function(req, res) {
-    res.render();
-});
-
-app.get("/journal", function(req, res) {
-    res.render();
-  });
-
-db.sequelize.sync({force: true}).then(function(){
+db.sequelize.sync({
+  force: true
+}).then(function(){
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
   // Log (server-side) when our server has started
