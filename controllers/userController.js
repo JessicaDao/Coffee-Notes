@@ -4,11 +4,9 @@ const db = require("../models");
 const user = require("../models/user");
 const bcrypt = require("bcrypt");
 
-router.post("/register",(req,res)=>{
+router.post("/signup",(req,res)=>{
     db.User.create({
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
-        email: req.body.email,
+        email: req.body.username,
         password: req.body.password
     }).then(data=>{
     res.json(data);
@@ -20,7 +18,7 @@ router.post("/register",(req,res)=>{
 router.post("/login",(req,res)=>{
     db.User.findOne({ //finds user
     where: {
-        email:req.body.email
+        username:req.body.username
     }
 }).then(userData=>{
     res.json(userData)
@@ -30,7 +28,7 @@ router.post("/login",(req,res)=>{
         if(bcrypt.compareSync(req.body.password, userData.password)){
             req.session.user={
                 id: userData.id,
-                firstname: userData.firstname
+                username: userData.username
             }
             //authenticate user
             res.json(userData);
@@ -47,7 +45,7 @@ router.get("/readsessions", (req,res)=>{
 
 router.get("/secretclub", (req,res)=>{
     if(req.session.user){
-        res.send("Hello, ${req.session.user.firstname}!")
+        res.send("Hello, ${req.session.user.username}!")
     } else {
         res.status(401).send("Please sign in!!")
     }

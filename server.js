@@ -46,6 +46,12 @@ app.get("/", (req,res)=>{
 const userRoutes = require("./controllers/userController");
 app.use(userRoutes);
 
+const journalRoutes = require("./controllers/journalController");
+app.use("/api/journal", journalRoutes);
+
+
+//----
+
 db.sequelize.sync({
   force: false
 }).then(function(){
