@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="/Coffee-Notes/views/img/logo.png" type="image/png">
+	<title>Coffee Notes ✎</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="/Coffee-Notes/public/css/style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Site Header -->
+  <nav class="logo">
+    <div id="logo" class="level-item">
+    <img src="/Coffee-Notes/views/img/logo.png" alt="Coffee Notes" width="175">
+    </div>
+  </nav>
+
+  <div class="container">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+    <div id="navbar" class="navbar-menu">
+    <a class="navbar-item" href="create.html">Create New Entry</a>
+    <a class="navbar-item" href="journal.html">Journal</a>
+    <a class="navbar-item is-active" href="login.html">Register/Login</a>
+    </div>
+  </nav>
+
+
+	<div class="columns is-desktop">
+   <!--Registration-->
+		<div id="register" class="column is-half">
+      <h1>Register</h1>
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input class="input" type="text" style="width: 50%;" placeholder="First Name">
+          <input class="input" type="text" style="width: 50%;" placeholder="Last Name">
+          <input class="input" type="text" style="width: 50%;" placeholder="Date of Birth">
+          <input class="input" type="email" style="width: 50%;" placeholder="Email">
+          <input class="input" type="password" style="width: 50%;" placeholder="Password">
+        </p>
+      </div>
+    </div>
+  <!--Login-->
+  	<div id="login" class="column is-half">
+      <h1>Login</h1>
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input class="input" type="email" style="width: 50%;" placeholder="Email">
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left">
+          <input class="input" type="password" style="width: 50%;" placeholder="Password">
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+    </div>
+</div>
+<!--footer image-->
+<div class="footerbg">
+  <br>
+  <br>
+  <br>
+</div>
+  <!-- Site Footer -->
+  <div class= "footer content has-text-centered">
+    <p>
+      <strong>Coffee Notes</strong> by Jessica, Pierre and Sara. UW Coding Bootcamp 2021
+  </p>
+  </div>
+</div>
+<script async type="text/javascript" src="/Coffee-Notes/public/js/script.js"></script>
+</body>
+
+</html>

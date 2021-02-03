@@ -1,0 +1,32 @@
+{
+  "name": "Coffee-Notes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JessicaDao/Coffee-Notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JessicaDao/Coffee-Notes/issues"
+  },
+  "homepage": "https://github.com/JessicaDao/Coffee-Notes#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "bulma": "^0.9.2",
+    "config.json": "0.0.4",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "materialize-css": "^1.0.0-rc.2",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.0"
+  }
+}

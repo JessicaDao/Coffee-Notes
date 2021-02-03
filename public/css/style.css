@@ -1,0 +1,29 @@
+.container{
+	position: relative;
+	background-image: url('/Coffee-Notes/views/img/bg2.png');
+	background-position: bottom center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: 'Open Sans', sans-serif;
+}
+.footer {
+	background-color: white;
+	padding: 1%;
+}
+
+
+.navbar-menu{
+	background-color: #FFF1E6;
+
+}
+
+.container {
+	background-color:antiquewhite;
+
+
+}
+
+
+.columns {
+	padding: 15%;
+}
