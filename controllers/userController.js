@@ -6,6 +6,8 @@ const bcrypt = require("bcrypt");
 
 router.post("/register",(req,res)=>{
     db.User.create({
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
         email: req.body.email,
         password: req.body.password
     }).then(data=>{
@@ -26,6 +28,11 @@ router.post("/login",(req,res)=>{
         res.json(404).send("User not found.")
     } else {
         if(bcrypt.compareSync(req.body.password, userData.password)){
+            req.session.user={
+                id: userData.id,
+                firstname: userData.firstname
+            }
+            //authenticate user
             res.json(userData);
         } else {
             res.status(401).send("Incorrect password. Try again.")
@@ -34,6 +41,16 @@ router.post("/login",(req,res)=>{
     })
 })
 
+router.get("/readsessions", (req,res)=>{
+    res.json(req.session)
+})
 
+router.get("/secretclub", (req,res)=>{
+    if(req.session.user){
+        res.send("Hello, ${req.session.user.firstname}!")
+    } else {
+        res.status(401).send("Please sign in!!")
+    }
+})
 module.exports = router;
 

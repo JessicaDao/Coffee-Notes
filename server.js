@@ -19,11 +19,12 @@ app.use(express.urlencoded({
 
 app.use(express.json());
 
+//saving data
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
+  saveUninitialized: false,
+  cookie: {maxAge: 1000*60*60*2} //max time saved 2hrs before logout
 }))
 
 //Static directory
