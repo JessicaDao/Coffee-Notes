@@ -1,3 +1,4 @@
+//bcrypt package to encrypt password
 const bcrypt = require("bcrypt");
 
 module.exports = function(sequelize, DataTypes){
@@ -18,7 +19,7 @@ module.exports = function(sequelize, DataTypes){
     User.associate = function(models){
         User.hasMany(models.Details);
     };
-
+//encrypts password
     User.beforeCreate(function(user) {
         user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
     });
