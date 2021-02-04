@@ -1,5 +1,6 @@
 
-# Project 2
+# Coffee Notes
+A journal app for coffee lovers to input their thoughts on their favorite (or disgusting) coffee drinks.
 
 ## Application Requirements
 
