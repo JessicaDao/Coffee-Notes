@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     Notes.associate = function(models) {
-        Notes.belongsToMany(models.Details,{through:"SavedNotes"});
+        Notes.belongsToMany(models.Details,{through:"notes"});
     };
 
     return Notes;
