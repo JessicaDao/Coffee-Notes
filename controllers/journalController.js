@@ -3,13 +3,28 @@ const router = express.Router();
 const db = require("../models");
 
 router.get("/", (req, res)=>{
-    db.notes.findAll().then(data=>{
+    db.Details.findAll().then(data=>{
         res.json(data)
     }).catch(err=>{
         res.status(500).json(err);
     })
 })
 
+router.get("/saved", (req, res)=>{
+    if(!req.session.user){
+        res.status(401),send("Not logged in")
+    } else{
+    db.Review.findAll({
+        where:{
+            UserId:req.session.user.id
+        }
+    }).then(data=>{
+        res.json(data)
+    }).catch(err=>{
+        res.status(500).json(err);
+        })
+    }
+})
 router.post("/", (req, res)=>{
     if(!req.session.user){
         res.status(401).send("Please login.")
@@ -25,7 +40,11 @@ router.post("/", (req, res)=>{
         location:req.body.location,
         notes:req.body.notes,
         UserId:req.session.user.id
-        })
+        }).then(data=>{
+            res.json(data);
+            }).catch(err=>{
+                res.status(500).json(err);
+            })
     }
 })
 

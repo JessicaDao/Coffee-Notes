@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     var Notes = sequelize.define('Notes', {
-         name: {
+         add_notes: {
             type:DataTypes.TEXT,
             allowNull:false
          }

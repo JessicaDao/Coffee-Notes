@@ -5,12 +5,10 @@ const user = require("../models/user");
 const bcrypt = require("bcrypt");
 
 router.post("/signup",(req,res)=>{
-    console.log(req.body)
     db.User.create({
         username: req.body.username,
         password: req.body.password
     }).then(data=>{
-        console.log(data)
     res.json(data);
     }).catch(err=>{
         res.status(500).json(err);
@@ -36,6 +34,7 @@ router.post("/login",(req,res)=>{
             //authenticate user
             res.json(userData);
         } else {
+            req.session.destroy();
             res.status(401).send("Incorrect password. Try again.")
         }
     }
@@ -53,5 +52,10 @@ router.get("/secretclub", (req,res)=>{
         res.status(401).send("Please sign in!!")
     }
 })
-module.exports = router;
 
+router.get("/logout", (req, res)=>{
+    req.session.destroy();
+    res.send("Logged out.")
+})
+
+module.exports = router;
