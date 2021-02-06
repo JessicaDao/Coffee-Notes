@@ -21,7 +21,6 @@ router.post("/login",(req,res)=>{
         username:req.body.username
     }
 }).then(userData=>{
-    res.json(userData)
     if(!userData){
         req.session.destroy();
         res.json(404).send("User not found.")
@@ -47,7 +46,7 @@ router.get("/readsessions", (req,res)=>{
 
 router.get("/secretclub", (req,res)=>{
     if(req.session.user){
-        res.send("Hello, ${req.session.user.username}!")
+        res.send(`Hello, ${req.session.user.username}!`)
     } else {
         res.status(401).send("Please sign in!!")
     }
