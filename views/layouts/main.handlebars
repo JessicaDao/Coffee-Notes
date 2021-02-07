@@ -29,11 +29,14 @@
             <span class="welcome"><strong>Welcome, {{user.username}}!</strong></span>
             </br>
             </br>
+        <a href="/create">
+            <button class="button">Create new drank!</button>
+        </a>   
+        <a href="/saved">
+            <button class="button">Journal</button>
+        </a>        
         <a href="logout">
             <button class="button">Logout</button>
-        </a>
-        <a href="/">
-            <button class="button">Create new drank!</button>
         </a>
         {{/if}}
         {{#unless user}}
