@@ -22,7 +22,7 @@ router.post("/login",(req,res)=>{
     }
 }).then(userData=>{
     if(!userData){
-        req.session.destroy();
+        req.session.destroy(); //resets cookie after failed login
         res.json(404).send("User not found.")
     } else {
         if(bcrypt.compareSync(req.body.password, userData.password)){
@@ -33,7 +33,7 @@ router.post("/login",(req,res)=>{
             //authenticate user
             res.json(userData);
         } else {
-            req.session.destroy();
+            req.session.destroy(); //resets cookie after failed login
             res.status(401).send("Incorrect password. Try again.")
         }
     }
@@ -44,6 +44,7 @@ router.get("/readsessions", (req,res)=>{
     res.json(req.session)
 })
 
+// Check if signed in or not
 router.get("/secretclub", (req,res)=>{
     if(req.session.user){
         res.send(`Hello, ${req.session.user.username}!`)
@@ -52,6 +53,7 @@ router.get("/secretclub", (req,res)=>{
     }
 })
 
+// Destroy = deletes existing cookies
 router.get("/logout", (req, res)=>{
     req.session.destroy();
     res.send("Logged out.")

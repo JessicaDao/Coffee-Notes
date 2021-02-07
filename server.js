@@ -1,5 +1,6 @@
 // Dependencies
 var express = require("express");
+// Sessions - generates server size cookies, stores data
 const session = require("express-session");
 
 // Create an instance of the express app.
@@ -37,12 +38,13 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
-app.get("/", (req,res)=>{
-  res.send("hi");
-})
+
 // Data
 
 // Routes
+const frontRoutes = require("./controllers/frontController");
+app.use(frontRoutes);
+
 const userRoutes = require("./controllers/userController");
 app.use(userRoutes);
 
