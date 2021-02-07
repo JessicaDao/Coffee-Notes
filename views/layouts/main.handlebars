@@ -13,37 +13,59 @@
 </head>
 
 <body>
-  <!-- Site Header -->
-  <nav class="logo">
-    <div id="logo" class="level-item">
-    <img src="/img/logo.png" alt="Coffee Notes" width="175">
-    </div>
-  </nav>
-<!--Nav Bar-->
-  <div class="container">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span></span>
-      <span></span>
-      <span></span>
-    </a>
-    <div id="navbar" class="navbar-menu">
-    <a class="navbar-item" href="create.html">Create New Entry</a>
-    <a class="navbar-item" href="journal.html">Journal</a>
-    <a class="navbar-item is-active" href="login.html">Register/Login</a>
-    </div>
-  </nav>
 
-	<div class="columns is-desktop">
-  
-{{{body}}}
+  <div class="container">
+<!--Hero Header-->
+<section class ="hero">
+  <div class ="hero-body">
+    <a href = "/"><img src = "/img/head.png" alt = "logo"></a>
+
+  {{{body}}}
+  </div>
+
+
+      <nav>
+        {{#if user}}
+            <span class="welcome"><strong>Welcome, {{user.username}}!</strong></span>
+            </br>
+            </br>
+        <a href="logout">
+            <button class="button">Logout</button>
+        </a>
+        <a href="/">
+            <button class="button">Create new drank!</button>
+        </a>
+        {{/if}}
+        {{#unless user}}
+        <a href = "/login">
+            <button class="button">Login</button>
+        </a>
+        <a href = "/signup">
+            <button class="button">Signup</button>
+        </a>
+        {{/unless}}
+    </nav>
+</section>
+
+<div class="columns is-desktop">
+
+</div>
+<!--footer image-->
+<div class="footerbg">
+</div>
 
   <!-- Site Footer -->
-  <div class= "footer content has-text-centered">
-    <p>
-      <strong>Coffee Notes</strong> by Jessica Dao. UW Coding Bootcamp 2021
+<div class= "footer content has-text-centered">
+  <p>
+    <strong>Coffee Notes</strong> by Jessica Dao. UW Coding Bootcamp 2021
   </p>
-  </div>
+</div>
+
+<!--scripts-->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="/js/login.js"></script>
+  
 </body>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-<script src="/js/login.js"></script>
+
+
 </html> 

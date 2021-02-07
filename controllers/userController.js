@@ -22,7 +22,7 @@ router.post("/login",(req,res)=>{
     }
 }).then(userData=>{
     if(!userData){
-        req.session.destroy(); //resets cookie after failed login
+        req.session.destroy(); //resets cookie after failed 
         res.json(404).send("User not found.")
     } else {
         if(bcrypt.compareSync(req.body.password, userData.password)){
@@ -33,7 +33,7 @@ router.post("/login",(req,res)=>{
             //authenticate user
             res.json(userData);
         } else {
-            req.session.destroy(); //resets cookie after failed login
+            req.session.destroy(); //resets cookie after failed 
             res.status(401).send("Incorrect password. Try again.")
         }
     }

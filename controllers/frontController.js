@@ -6,9 +6,10 @@ router.get("/", (req, res)=>{
     db.Details.findAll().then(data=>{
         const jsonData = data.map(obj => obj.toJSON())
         const hbsObj = {
-            details:jsonData 
+            details:jsonData,
+            user:req.session.user
         }
-        console.log(jsonData);
+        //console.log(jsonData);
         res.render("index",hbsObj)
     })
 })

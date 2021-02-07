@@ -11,18 +11,19 @@
 	padding: 1%;
 }
 
-
-.navbar-menu{
-	background-color: #FFF1E6;
-
+.hero {
+	width:100%;
+	text-align:center;
+	display:inline-block;
+	margin: 0 auto;
 }
 
-.container {
-	background-color:antiquewhite;
-
-}
 
 
 .columns {
+	width:100%;
+	text-align:center;
+	display:inline-block;
+	margin: 0 auto;
 	padding: 15%;
 }
