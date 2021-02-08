@@ -1,7 +1,19 @@
-<h1>coffee history</h1>
-{{#each details}}
-<h3>{{coffee_name}}</h3>
-<p>{{coffee_bean}}</p>
-<p>producer: {{producer}}
-</p>
-{{/each}}
+<div class="container">
+    <div class="columns">
+        <h1>Previous dranks:</h1></br>
+        <div id="saved-journal" class="box">
+
+                {{#each details}}
+            <p>coffee name: {{coffee_name}}</p>
+            <p>coffee bean: {{coffee_bean}}</p>
+            <p>producer: {{producer}}</p>
+            <p>brew method: {{brew_method}}</p>
+            <p>taste: {{taste}}</p>
+            <p>rating: {{rate}}</p>
+            <p>price: {{price}}</p>
+            <p>location: {{location}}</p>
+            <p>notes: {{notes}}</p>
+                {{/each}}
+        </div>
+    </div>
+</div>

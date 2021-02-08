@@ -14,45 +14,43 @@
 
 <body>
 
-  <div class="container">
+<div id="main" class="container">
 <!--Hero Header-->
 <section class ="hero">
   <div class ="hero-body">
     <a href = "/"><img src = "/img/head.png" alt = "logo"></a>
 
-  {{{body}}}
   </div>
 
-
-      <nav>
+<!--Nav-->
+<nav class="navbar is-danger" role="navigation" aria-label="main navigation">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
         {{#if user}}
-            <span class="welcome">Welcome back, <strong>{{user.username}}</strong>!</span>
-            </br>
-            </br>
-        <a href="/add">
-            <button class="button">Add a new drank</button>
-        </a>   
-        <a href="/journal">
-            <button class="button">Journal</button>
-        </a>        
-        <a href="/logout">
-            <button class="button">Logout</button>
-        </a>
+        <a class="navbar-item" href="/add">Add a new drank</a>
+        <a class="navbar-item" href="/journal">Journal</a>        
+        <a class="navbar-item" href="/logout">Logout</a>
         {{/if}}
         {{#unless user}}
-        <a href = "/login">
-            <button class="button">Login</button>
-        </a>
-        <a href = "/signup">
-            <button class="button">Signup</button>
-        </a>
+        <a class="navbar-item" href ="/login">Login</a>
+        <a class="navbar-item" href = "/signup">Signup</a>
         {{/unless}}
-    </nav>
+    </nav>            
+           {{#if user}}
+<div class="welcome"><span class="welcome">Welcome back, <strong>{{user.username}}</strong>!</span></div>
+        {{/if}}
+
+        {{{body}}}
 </section>
 
-<div class="columns is-desktop">
+<div class="columns is-desktop" id="first">
+
 
 </div>
+</br>
 <!--footer image-->
 <div class="footerbg">
 </div>

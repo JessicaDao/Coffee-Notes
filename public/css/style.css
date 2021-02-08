@@ -1,4 +1,4 @@
-.container{
+#main {
 	position: relative;
 	background-image: url('/img/bg2.png');
 	background-position: bottom center;
@@ -18,12 +18,28 @@
 	margin: 0 auto;
 }
 
+.hero .navbar {
+     background: white;
+}
 
+.welcome {
+	background-color: white;
+	padding: 5%;
+}
 
 .columns {
 	width:100%;
 	text-align:center;
 	display:inline-block;
 	margin: 0 auto;
-	padding: 15%;
+}
+
+#first {
+		padding: 15%;
+}
+
+
+#saved-journal {
+	margin: 0 auto;
+	padding: 30%;
 }

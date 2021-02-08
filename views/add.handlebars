@@ -1,12 +1,72 @@
-<form id="add">
-    <input type="text" placeholder="coffee_name" id="coffee_name" placeholder = "coffee_name">
-    <input type="text" placeholder="producer" id="producer" placeholder = "producer">
-    <input type="text" placeholder="coffee_bean" id="coffee_bean" placeholder = "coffee_bean">
-    <input type="text" placeholder="brew_method" id="brew_method" placeholder = "brew_method">
-    <input type="text" placeholder="taste" id="taste" placeholder = "taste">
-    <input type="text" placeholder="rate" id="rate" placeholder = "rate">
-    <input type="text" placeholder="price" id="price" placeholder = "price">
-    <input type="text" placeholder="location" id="location" placeholder = "location">
-    <textarea type="text" placeholder="notes" id="notes" placeholder = "notes">
+<div class="columns">
+<div id="details" class="column is-half">
+<form class="box" id="add">
+  <div class="field">
+    <label class="label">Coffee Name:</label>
+    <div class="control">
+    <input class="input" type="text" placeholder="coffee name" id="coffee_name">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Coffee producer:</label>
+    <div class="control">
+    <input class="input" type="text" placeholder="producer" id="producer">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Coffee Bean:</label>
+    <div class="control">
+    <input class="input" type="text" placeholder="coffee bean" id="coffee_bean">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Brew Method:</label>
+    <div class="control">
+    <input class="input" type="text" placeholder="brew method" id="brew_method">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Taste:</label>
+    <div class="control">
+    <input class="input" type="text" placeholder="taste" id="taste">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Rating:</label>
+    <div class="control">
+    <input class="input" type="text" placeholder="rate" id="rate">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Price:</label>
+    <div class="control">
+    <input class="input" type="text" placeholder="price" id="price">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Location:</label>
+    <div class="control">
+    <input class="input" type="text" placeholder="location" id="location">
+    </div>
+  </div>
+</div></form>
+
+<div id = "notes" class="column">
+<form class="box" id="add">
+  <div class="field">
+    <label class="label">Notes:</label>
+    <div class="control">
+    <textarea class="textarea is-normal" type="text" placeholder="notes" id="notes"></textarea>
+    </div>
+  </div>
+<button class="button" type="submit" value ="save">Save</button>
+</div>
 </form>
-       <button class="button">Save</button>
+</div>
