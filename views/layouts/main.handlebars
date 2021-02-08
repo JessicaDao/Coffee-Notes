@@ -26,16 +26,16 @@
 
       <nav>
         {{#if user}}
-            <span class="welcome"><strong>Welcome, {{user.username}}!</strong></span>
+            <span class="welcome">Welcome back, <strong>{{user.username}}</strong>!</span>
             </br>
             </br>
-        <a href="/create">
-            <button class="button">Create new drank!</button>
+        <a href="/add">
+            <button class="button">Add a new drank</button>
         </a>   
         <a href="/saved">
             <button class="button">Journal</button>
         </a>        
-        <a href="logout">
+        <a href="/logout">
             <button class="button">Logout</button>
         </a>
         {{/if}}

@@ -4,6 +4,7 @@ const db = require("../models");
 const user = require("../models/user");
 const bcrypt = require("bcrypt");
 
+//Sign up
 router.post("/signup",(req,res)=>{
     db.User.create({
         username: req.body.username,
@@ -15,6 +16,7 @@ router.post("/signup",(req,res)=>{
     })
 })
 
+// Login
 router.post("/login",(req,res)=>{
     db.User.findOne({ //finds user
     where: {
@@ -40,6 +42,7 @@ router.post("/login",(req,res)=>{
     })
 })
 
+// Shows current session
 router.get("/readsessions", (req,res)=>{
     res.json(req.session)
 })
@@ -53,10 +56,12 @@ router.get("/secretclub", (req,res)=>{
     }
 })
 
+
 // Destroy = deletes existing cookies
 router.get("/logout", (req, res)=>{
     req.session.destroy();
     res.send("Logged out.")
+    res.redirect("/");
 })
 
 module.exports = router;

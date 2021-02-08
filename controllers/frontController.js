@@ -18,5 +18,20 @@ router.get("/login", (req,res)=>{
     res.render("login")
 })
 
+router.get("/signup", (req,res)=>{
+    res.render("signup")
+})
+
+router.get("/add", (req, res) => {
+    if(!req.session.user){
+        res.redirect("/login")
+    } else {
+        res.render("/add", {
+            user: req.session.user
+        })
+    }
+})
+
+
 
 module.exports = router;
