@@ -26,11 +26,11 @@ module.exports = function(sequelize, DataTypes){
         allowNull:false,
         validate:{
             min:0,
-            max:5
+            max:10
         }
     },
     price:{
-        type:DataTypes.INTEGER,
+        type:DataTypes.FLOAT,
         allowNull:false
     },
     location:{

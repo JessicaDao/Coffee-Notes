@@ -26,3 +26,22 @@ $("#signup").submit(event =>{
         alert("Sign up did not go through, please try again.");
     })
 })
+
+$("#add").submit(event=>{
+    event.preventDefault();
+    $.post('/api/journal',{
+        coffee_name:$("#coffee_name").val(),
+        producer:$("#producer").val(),
+        coffee_bean:$("#coffee_bean").val(),
+        brew_method:$("#brew_method").val(),
+        taste:$("#taste").val(),
+        rate:$("#rate").val(),
+        price:$("#price").val(),
+        location:$("#location").val(),
+        notes:$("#notes").val()
+    }).then(data=>{
+        window.location.href="/"
+    }).fail(err=>{
+        alert("Failed, try again");
+    })
+})
