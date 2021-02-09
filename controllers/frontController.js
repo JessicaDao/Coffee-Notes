@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
+const user = require("../models/user");
 
 router.get("/", (req, res)=>{
     db.Details.findAll().then(data=>{
@@ -36,8 +37,13 @@ router.get("/journal", (req, res) => {
     if(!req.session.user){
         res.redirect("/login")
     } else {
-        res.render("journal", {
-            user: req.session.user
+        db.Details.findAll().then(data=>{
+            const jsonData = data.map(obj => obj.toJSON())
+            const hbsObj = {
+                details:jsonData,
+            }
+            console.log(jsonData);
+            res.render("journal",hbsObj)
         })
     }
 })
